@@ -11,11 +11,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-public class API_Call {
+public class API_Call_test {
     private Retrofit retrofit;
     private Login_Call login_call;
     private User user;
-    public API_Call() {
+    public API_Call_test() {
      retrofit = API_CALL.getAPI_Instance().getRetrofit();
      login_call = retrofit.create(Login_Call.class);
     }

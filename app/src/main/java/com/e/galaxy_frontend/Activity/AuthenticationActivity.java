@@ -1,30 +1,34 @@
 package com.e.galaxy_frontend.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.e.galaxy_frontend.API_Connection.API_CALL;
-import com.e.galaxy_frontend.API_Interface.Login_Call;
-import com.e.galaxy_frontend.Call.API_Call;
-import com.e.galaxy_frontend.Model.User;
 import com.e.galaxy_frontend.R;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
 
-public class AuthenticationActivity extends AppCompatActivity {
 
+public class AuthenticationActivity extends AppCompatActivity implements View.OnClickListener {
+    private Button btnlog, btnsign;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        btnlog = findViewById(R.id.btngotologin);
+        btnsign = findViewById(R.id.btngotosignup);
+        btnlog.setOnClickListener(this);
+        btnsign.setOnClickListener(this);
+    }
 
-        //Toast.makeText(this, "Hell World", Toast.LENGTH_SHORT).show();
-        API_Call api = new API_Call();
-        Toast.makeText(this, api.getMessage(), Toast.LENGTH_SHORT).show();
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.btngotologin){
+            startActivity( new Intent(AuthenticationActivity.this,LoginAcitivity.class));
+        }else if(v.getId() == R.id.btngotosignup){
+            startActivity( new Intent(AuthenticationActivity.this,SignupActivity.class));
+        }
     }
 }
