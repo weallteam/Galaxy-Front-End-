@@ -83,7 +83,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         userModel.setLastname(lname);
         userModel.setEmail(emai);
         userModel.setSecurity_question("default");
-        userModel.setSecurity_question("default");
+        userModel.setSecurity_answer("default");
         Call<Void> call = signUp_call.onSignUp(userModel);
         call.enqueue(new Callback<Void>() {
             @Override

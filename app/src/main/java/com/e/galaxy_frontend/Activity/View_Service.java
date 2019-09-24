@@ -7,11 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.e.galaxy_frontend.R;
 
-public class HomepageActivity extends AppCompatActivity {
-
+public class View_Service extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.homepage_layout);
+        setContentView(R.layout.view_service);
     }
 }
